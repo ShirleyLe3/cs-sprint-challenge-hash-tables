@@ -1,8 +1,18 @@
 def intersection(arrays):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    inter = {}
+    result = []
+
+    for arr in arrays:
+        for num in arr:
+            if num not in inter:
+                inter[num] = 0
+            inter[num] += 1
+    
+    inter_list = list(inter.items())
+
+    for item in inter_list:
+        if item[1] == len(arrays):
+            result.append(item[0])
 
     return result
 
