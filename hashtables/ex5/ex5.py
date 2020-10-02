@@ -3,11 +3,21 @@
 
 
 def finder(files, queries):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    d = {}
+    result = []
 
+    for path in files:
+        filename = path.split('/')[-1]
+        if filename not in d:
+            d[filename] = []
+        d[filename].append(path)
+
+    for q in queries:
+        if q in d:
+            for path in d[q]:
+                result.append(path)
+
+    print(result)
     return result
 
 
